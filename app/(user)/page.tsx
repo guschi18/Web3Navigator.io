@@ -1,6 +1,7 @@
 import { groq } from "next-sanity";
 import { client } from "../../lib/sanity.client"
 import BlogList from "../../components/BlogList"
+import Banner from "../../components/Banner"
 
 
 
@@ -17,6 +18,9 @@ export default async function HomePage() {
 
 const posts = await client.fetch(query);
 return (
+  <>
+  <Banner />
   <BlogList posts={posts} />
+  </>
   );
 }

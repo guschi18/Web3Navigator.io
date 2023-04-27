@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 function Header() {
   return (
-    <header className='flex justify-around p-5 max-w-7xl mx-auto'>
+    <header className='flex justify-around p-5 mx-auto'>
      <div className='flex items-center space-x-5'>
         <Link href="/">
             <Image

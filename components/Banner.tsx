@@ -4,7 +4,7 @@ import web3 from "../images/web3.jpg";
 
 function Banner() {
   return (
-    <div className="max-w-7xl mx-auto">
+    <div>
 
     <div className="flex justify-between items-center border-y border-black py-10 lg:py-0">
       <div className="px-10 space-y-5">
