@@ -46,7 +46,7 @@ return (
             <div className="relative min-h-56 flex flex-col md:flex-row justify-between">
                 <div className="absolute top-0 w-full h-full opacity-10 blur-sm p-10">
                 <Image 
-                    className=" object-cover oject-center mx-auto "
+                    className="relative object-cover oject-center mx-auto "
                     src={urlFor(post.mainImage).url()}
                     alt={post.author.name}
                     fill/>
