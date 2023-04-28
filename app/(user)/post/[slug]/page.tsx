@@ -41,7 +41,7 @@ async function Post({params: {slug }}: Props) {
 const post: Post = await client.fetch(query, { slug });
 
 return (
-    <article className="px-10 pb-28">
+    <article className="px-10 pb-28 border-y border-black py-4">
         <section className="space-y-2 text-white">
             <div className="relative min-h-56 flex flex-col md:flex-row justify-between">
                 <div className="absolute top-0 w-full h-full opacity-10 blur-sm p-10">
