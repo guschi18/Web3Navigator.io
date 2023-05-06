@@ -4,8 +4,6 @@ import Image from "next/image";
 import urlFor from "@/lib/urlFor";
 import { PortableText } from "@portabletext/react";
 import { RichTextComponents } from "@/components/RichTextComponents";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 
 type Props = {
     params: {
@@ -43,8 +41,6 @@ async function Post({params: {slug }}: Props) {
 const post: Post = await client.fetch(query, { slug });
 
 return (
-    <>
-    <Header />
     <article className="px-10 pb-28 border-t border-black pt-4">
         <section className="space-y-2 text-white">
             <div className="relative min-h-56 flex flex-col md:flex-row justify-between">
@@ -99,8 +95,6 @@ return (
         </section>
         <PortableText value={post.body} components={RichTextComponents} />
     </article>
-    <Footer />
-    </>
   )
 }
 

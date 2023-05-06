@@ -1,6 +1,8 @@
-import '../../styles/globals.css';
+import '../../../../styles/globals.css';
 import { Inter } from 'next/font/google';
-import { ThirdwebProvider } from "@thirdweb-dev/react";
+import LoginHeader from '@/components/LoginHeader';
+import Footer from '@/components/Footer';
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,7 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="max-w-7xl mx-auto">
+        <LoginHeader />
         {children}
+        <Footer />
         </body>
     </html>
   )

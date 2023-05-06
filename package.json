@@ -10,17 +10,23 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.0.17",
+    "@moralisweb3/next": "^2.19.0",
     "@portabletext/react": "^3.0.0",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.9.0",
     "@tailwindcss/line-clamp": "^0.4.4",
+    "@thirdweb-dev/react": "^3.11.9",
+    "@thirdweb-dev/sdk": "^3.10.12",
     "@types/node": "18.16.0",
     "@types/react": "18.2.0",
     "@types/react-dom": "18.2.0",
     "autoprefixer": "10.4.14",
     "eslint": "8.39.0",
     "eslint-config-next": "13.3.1",
+    "ethers": "^5.7.2",
+    "moralis": "^2.19.0",
     "next": "13.3.1",
+    "next-auth": "^4.22.1",
     "next-sanity": "^4.1.7",
     "postcss": "8.4.23",
     "react": "18.2.0",
@@ -28,7 +34,8 @@
     "sanity": "^3.9.0",
     "styled-components": "^5.3.9",
     "tailwindcss": "3.3.1",
-    "typescript": "5.0.4"
+    "typescript": "5.0.4",
+    "wagmi": "^0.12.12"
   },
   "devDependencies": {
     "@sanity/eslint-config-studio": "^2.0.1",

@@ -6,6 +6,7 @@ type Base = {
     _updatedAt: string;
 };
 
+
 interface Post extends Base {
     author: Author;
     body: Block[];
