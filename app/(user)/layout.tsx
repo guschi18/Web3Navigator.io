@@ -1,8 +1,4 @@
 import '../../styles/globals.css';
-import { Inter } from 'next/font/google';
-import { ThirdwebProvider } from "@thirdweb-dev/react";
-
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Web3Navigator',

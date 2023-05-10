@@ -10,6 +10,8 @@ const { provider, webSocketProvider } = configureChains(
   [publicProvider()]
 );
 
+
+
 const client = createClient({
   provider,
   webSocketProvider,
@@ -18,12 +20,13 @@ const client = createClient({
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ThirdwebProvider activeChain="goerli"
+    <ThirdwebProvider activeChain="mumbai"
     authConfig={{
       // Set this to your domain to prevent phishing attacks
-      domain: "example.com",
+      domain: "example.org",
       // The URL of your Auth API
       authUrl: "/api/auth",
+      loginRedirect: '/nft/nftlogin',
     }}>
     <WagmiConfig client={client}>
       <SessionProvider session={pageProps.session} refetchInterval={0}>

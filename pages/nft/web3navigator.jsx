@@ -1,17 +1,27 @@
 import Image from "next/image"
 import ape from "../../images/ape.png"
 import monkey from "../../images/monkey.png"
-import { useAddress, useConnect, useDisconnect, metamaskWallet } from "@thirdweb-dev/react";
+import { useAddress, useConnect, useDisconnect, metamaskWallet, useContract, useContractRead, Web3Button, ConnectWallet} from "@thirdweb-dev/react";
 import Link from "next/link";
 
 
+
+
 export default function NFTPage() {
-  const connect = useConnect();
+
+  const address = useAddress();
+  const contractAddress ="0x5825F215E1E6c02cC6C916f1D3F67D7bB62135Cc";
+  const {contract} = useContract(contractAddress);
+  const { data: totalMinted, isLoadingTotalMinted } = useContractRead(contract,"totalMinted");
+
+
+  {/*const connect = useConnect();
   const metamask = metamaskWallet();
   const address = useAddress();
-  const disconnect = useDisconnect();
+const disconnect = useDisconnect();*/}
 
-console.log(address)
+
+
 
   return (
     <div className="flex h-screen flex-col lg:grid lg:grid-cols-10">
@@ -38,11 +48,12 @@ console.log(address)
       <h1 className="w-52 cursor-pointer text-2xl font-extralight sm:w-80">Der<Link href="/">
         <span className="font-extrabold underline decoration-red-600/90">Web3Navigator</span></Link> NFT Marktplatz
       </h1>
-      <button onClick={() => (address ? disconnect() : connect(metamask))} 
+      <ConnectWallet className="!rounded-full !bg-red-600/90 !py-2 !px-1 !text-sm !font-bold !text-white !lg:px-5 !lg:py-3 !lg:text-base" />
+      {/*<button onClick={() => (address ? disconnect() : connect(metamask))} 
       className="rounded-full bg-red-600/90 py-2 px-1 text-sm font-bold text-white lg:px-5 lg:py-3 lg:text-base"  
       >
       {address ? "Logout Metamask" : "Login MetaMask"}
-      </button>
+  </button>*/}
     </header>
 
     <hr className="my-2 border" />
@@ -53,12 +64,18 @@ console.log(address)
       alt="NFT-Monkey" />
       <h1 className="text-3xl font-bold lg:text-5xl lg:font-extrabold"> Der Web3Navigator Ape Club | NFT Drop</h1>
 
-    <p className="pt-2 text-xl text-green-500"> 21 / 1000 NFTs gemintet</p>
+    <p className="pt-2 text-xl text-green-500" isLoaded={!isLoadingTotalMinted}>Bereits geminted: {totalMinted?.toNumber()}/10</p>
 
     </div>
-        <button className="mt-10 h-16 bg-red-600/90 w-full text-white rounded-full font-bold">
-          Mint NFT (0.01 ETH)
-        </button>
+    {address? (
+      <Web3Button
+      contractAddress={contractAddress}
+      action={(contract) => contract.erc721.claim(1) }
+      className="!mt-10 !h-16 !bg-red-600/90 !w-full !text-white !rounded-full !font-bold">Mint</Web3Button>
+    ) : (
+      <p className="font-bold text-lg">Bitte Wallet connecten!</p>
+    )}
+        
       </div>
     </div>
   )
