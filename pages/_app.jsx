@@ -4,13 +4,14 @@ import { SessionProvider } from "next-auth/react";
 import { mainnet } from "wagmi/chains";
 import '../styles/globals.css'
 import { ThirdwebProvider } from "@thirdweb-dev/react";
+import { domainName } from "../const/yourDetails";
 
 const { provider, webSocketProvider } = configureChains(
   [mainnet],
   [publicProvider()]
 );
 
-
+const activeChain = "mumbai";
 
 const client = createClient({
   provider,
@@ -20,19 +21,15 @@ const client = createClient({
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ThirdwebProvider activeChain="mumbai"
+    <ThirdwebProvider activeChain={activeChain}
     authConfig={{
       // Set this to your domain to prevent phishing attacks
-      domain: "example.org",
+      domain: domainName,
       // The URL of your Auth API
       authUrl: "/api/auth",
-      loginRedirect: '/nft/nftlogin',
+      loginRedirect: '/mitgliederbereich',
     }}>
-    <WagmiConfig client={client}>
-      <SessionProvider session={pageProps.session} refetchInterval={0}>
-        <Component {...pageProps} />
-        </SessionProvider>
-    </WagmiConfig>
+    <Component {...pageProps} />
     </ThirdwebProvider>
   );
 }

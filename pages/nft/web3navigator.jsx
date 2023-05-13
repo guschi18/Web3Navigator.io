@@ -1,5 +1,5 @@
 import Image from "next/image"
-import ape from "../../images/ape.png"
+import ape from "../../images/ape.jpg"
 import monkey from "../../images/monkey.png"
 import { useAddress, useConnect, useDisconnect, metamaskWallet, useContract, useContractRead, Web3Button, ConnectWallet} from "@thirdweb-dev/react";
 import Link from "next/link";
@@ -33,9 +33,6 @@ const disconnect = useDisconnect();*/}
         alt="NFT-Logo" />
         </div>
         <div className="text-center p-5 spaye-y-2">
-          <h1 className="text-4xl font-bold text-white" >
-            Web3Navigator
-          </h1>
           <h2 className="text-xl text-gray-300">
             Login Collection zum Mitgliederbereich
           </h2>
@@ -45,10 +42,11 @@ const disconnect = useDisconnect();*/}
 
     <div className="flex flex-1 flex-col p-12 lg:col-span-6">
     <header className="flex items-center justify-between">
-      <h1 className="w-52 cursor-pointer text-2xl font-extralight sm:w-80">Der<Link href="/">
+      <h1 className="w-52 cursor-pointer text-2xl font-extralight sm:w-80">Der{" "}<Link href="/">
         <span className="font-extrabold underline decoration-red-600/90">Web3Navigator</span></Link> NFT Marktplatz
       </h1>
-      <ConnectWallet className="!rounded-full !bg-red-600/90 !py-2 !px-1 !text-sm !font-bold !text-white !lg:px-5 !lg:py-3 !lg:text-base" />
+      <ConnectWallet btnTitle="Login"
+      className="!rounded-full !bg-red-600/90 !py-2 !px-1 !text-sm !font-bold !text-white !lg:px-5 !lg:py-3 !lg:text-base" />
       {/*<button onClick={() => (address ? disconnect() : connect(metamask))} 
       className="rounded-full bg-red-600/90 py-2 px-1 text-sm font-bold text-white lg:px-5 lg:py-3 lg:text-base"  
       >
@@ -57,12 +55,14 @@ const disconnect = useDisconnect();*/}
     </header>
 
     <hr className="my-2 border" />
-    {address && (<p className="text-center text-lg text-red-600/90">Du bist eingeloggt mit dem Wallet{address.substring(0, 5)}...{address.substring(address.length - 5)}</p>)}
+    {address && (<p className="text-center text-lg text-red-600/90">Du bist connected mit dem Wallet {address.substring(0, 5)}...{address.substring(address.length - 5)}</p>)}
     <div className="mt-10 flex flex-1 flex-col items-center space-y-6 text-center lg:space-y-0 lg:justify-center">
-      <Image className="w-80 object-cover pb-10 lg:h-72" 
+    <div className="bg-gradient-to-tr from-emerald-200 via-neutral-300 to-stone-300 p-2 rounded-xl">
+      <Image className="w-80 rounded-xl object-cover lg:h-72" 
       src={monkey}
       alt="NFT-Monkey" />
-      <h1 className="text-3xl font-bold lg:text-5xl lg:font-extrabold"> Der Web3Navigator Ape Club | NFT Drop</h1>
+      </div>
+      <h1 className="text-3xl p-5 font-bold lg:text-5xl lg:font-extrabold"> Der Web3Navigator Ape Club | NFT Drop</h1>
 
     <p className="pt-2 text-xl text-green-500" isLoaded={!isLoadingTotalMinted}>Bereits geminted: {totalMinted?.toNumber()}/10</p>
 
@@ -73,7 +73,7 @@ const disconnect = useDisconnect();*/}
       action={(contract) => contract.erc721.claim(1) }
       className="!mt-10 !h-16 !bg-red-600/90 !w-full !text-white !rounded-full !font-bold">Mint</Web3Button>
     ) : (
-      <p className="font-bold text-lg">Bitte Wallet connecten!</p>
+      <p className="font-bold text-lg">Bitte einloggen um die Mint Funktion freizuschalten!</p>
     )}
         
       </div>
