@@ -10,6 +10,7 @@ import LoginHeader from '@/components/LoginHeader';
 import { groq } from "next-sanity";
 import { client } from "../lib/sanity.client"
 import BlogList2 from "../components/BlogList2"
+import Subscribe from "../components/Subscribe"
 
 
 
@@ -27,14 +28,9 @@ function User({ posts }) {
   return (
     <div className="max-w-7xl mx-auto">
      <LoginHeader />
-     
-      <div className="flex justify-center pb-4">
-      <div className="flex justify-center pb-4">
-        <button className="bg-gradient-to-r from-indigo-500 to-emerald-500 text-white font-bold py-2 px-4 rounded" onClick={() => logout({ redirect: "/" })}>Ausloggen</button>
-      </div>
-      </div>
       <LoginBanner />
       <BlogList2 posts={posts} />
+      <Subscribe />
       <LoginFooter />
     </div>
   );

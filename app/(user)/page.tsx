@@ -5,7 +5,7 @@ import Banner from "../../components/Banner";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import NFT from "@/components/NFT";
-
+import Subscribe from "../../components/Subscribe" 
 
 
 
@@ -23,6 +23,7 @@ const query = groq`
 export const revalidate = 30;
 
 export default async function HomePage() {
+  
 
 
 const posts = await client.fetch(query);
@@ -30,8 +31,9 @@ return (
   <>
   <Header />
   <Banner />
-  <BlogList posts={posts} />
   <NFT />
+  <BlogList posts={posts} />
+  <Subscribe />
   <Footer />
   </>
   );
