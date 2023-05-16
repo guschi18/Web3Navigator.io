@@ -27,8 +27,8 @@ export default function SubscribePage() {
   return (
     <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
         <div className="mx-auto max-w-screen-md sm:text-center">
-      <h2 className="mb-4 text-3xl tracking-tight font-extrabold text-black sm:text-xl dark:text-white">Abonniere unseren Newsletter</h2>
-      <p className="mx-auto mb-8 max-w-2xl font-light text-gray-600 md:mb-12 sm:text-xl dark:text-gray-600">Verpasse keine Neuigkeiten zu unserem Roadmap-Fortschritt und spannenden Ankündigungen! Melde dich jetzt mit deiner E-Mail-Adresse an und bleibe über unseren Blog auf dem Laufenden.</p>
+      <div className="mb-4 text-xl tracking-tight font-extrabold text-black sm:text-3xl dark:text-white">Abonniere unseren Newsletter</div>
+      <div className="mx-auto mb-8 max-w-2xl font-light text-gray-600 md:mb-12 sm:text-xl dark:text-gray-600">Verpasse keine Neuigkeiten zu unserem Roadmap-Fortschritt und spannenden Ankündigungen! Melde dich jetzt mit deiner E-Mail-Adresse an und bleibe über unseren Blog auf dem Laufenden.</div>
       <form onSubmit={subscribe}>
         <div class="items-center mx-auto mb-3 space-y-4 max-w-screen-sm sm:flex sm:space-y-0">
           <div className="relative w-full">
