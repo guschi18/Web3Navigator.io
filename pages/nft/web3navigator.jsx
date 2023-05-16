@@ -43,7 +43,7 @@ export default function NFTPage() {
         <span className="font-extrabold underline decoration-blue-300/90">Web3Navigator</span></Link> NFT Marktplatz
       </h1>
       <ConnectWallet btnTitle="Login"
-      className="!rounded-full !bg-sky-600/90 !py-2 !px-1 !text-sm !font-bold !text-white !lg:px-5 !lg:py-3 !lg:text-base" />
+      className="!rounded-full !w-auto !bg-sky-600/90 !py-2 !px-1 !text-sm !font-bold !text-white !lg:px-5 !lg:py-3 !lg:text-base" />
     </header>
 
     <hr className="my-2 border" />
@@ -63,9 +63,9 @@ export default function NFTPage() {
       <Web3Button
       contractAddress={contractAddress}
       action={(contract) => contract.erc721.claim(1) }
-      className="!mt-10 !h-16 !bg-sky-600/90 !w-full !text-white !rounded-full !font-bold">Mint</Web3Button>
+      className="!mt-10 !w-auto !h-16 !bg-sky-600/90 !text-white !rounded-full !font-bold">Mint</Web3Button>
     ) : (
-      <p className="font-bold text-lg">Bitte einloggen um die Mint Funktion freizuschalten!</p>
+      <p className="font-bold text-lg text-center">Bitte einloggen um die Mint Funktion freizuschalten!</p>
     )}
         
       </div>
