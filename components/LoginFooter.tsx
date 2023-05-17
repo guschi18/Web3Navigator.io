@@ -16,10 +16,10 @@ const Footer = () => {
             alt="btc-eth Symbole" />
         </Link>
         <ul className="flex flex-wrap items-center mb-6 text-m font-medium sm:mb-0">
-    <li><Link href="/roadmap"><h3 className="mr-4  text-yellow-500  hover:underline md:mr-6">Roadmap</h3></Link></li>
-    <li><Link href="/ueberuns"><h3 className="mr-4 text-neutral-500 hover:underline md:mr-6">Über uns</h3></Link></li>
-    <li><Link href="/impressum"><h3 className="mr-4 text-neutral-500 hover:underline md:mr-6">Impressum</h3></Link></li>
-    <li><Link href="/datenschutz"><h3 className="mr-4 text-neutral-500 hover:underline md:mr-6">Datenschutzerklärung</h3></Link></li>
+    <li><Link href="/roadmap2"><h3 className="mr-4  text-yellow-500  hover:underline md:mr-6">Roadmap</h3></Link></li>
+    <li><Link href="/ueberuns2"><h3 className="mr-4 text-neutral-500 hover:underline md:mr-6">Über uns</h3></Link></li>
+    <li><Link href="/impressum2"><h3 className="mr-4 text-neutral-500 hover:underline md:mr-6">Impressum</h3></Link></li>
+    <li><Link href="/datenschutz2"><h3 className="mr-4 text-neutral-500 hover:underline md:mr-6">Datenschutzerklärung</h3></Link></li>
           </ul>
     </div>
     <hr className="my-6 border-black sm:mx-auto lg:my-8" />

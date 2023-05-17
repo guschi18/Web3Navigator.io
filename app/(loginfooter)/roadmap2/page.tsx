@@ -12,7 +12,7 @@ return (
     <div className="lg:col-span-4 bg-gradient-to-tr from-amber-500 via-yellow-500 to-yellow-500">
     <div className="flex flex-col items-center justify-center py-2 lg:min-h-screen">
       <div className="bg-gradient-to-br from-black to-stone-500 p-2 rounded-xl">
-      <Link href="/">
+      <Link href="mitgliederbereich">
         <Image className="w-44 rounded-xl object-cover lg:h-96 lg:w-72"
         src={w3nbtceth}
         alt="NFT-Logo" /></Link>
@@ -26,7 +26,7 @@ return (
     </div>
     <div className="flex flex-1 flex-col p-12 lg:col-span-6">
     <header className="flex items-center justify-between">
-      <h1 className="w-52 cursor-pointer text-2xl font-extralight sm:w-80">Die{" "}<Link href="/">
+      <h1 className="w-52 cursor-pointer text-2xl font-extralight sm:w-80">Die{" "}<Link href="/mitgliederbereich">
         <span className="font-extrabold underline decoration-stone-500/90">Web3Navigator</span></Link> Roadmap
       </h1>
     </header>

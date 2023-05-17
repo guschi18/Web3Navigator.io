@@ -30,10 +30,10 @@ export default function SubscribePage() {
       <div className="mb-4 text-xl tracking-tight font-extrabold text-black sm:text-3xl">Abonniere unseren Newsletter</div>
       <div className="mx-auto mb-8 max-w-2xl font-light text-gray-600 md:mb-12 sm:text-xl dark:text-gray-600">Verpasse keine Neuigkeiten zu unserem Roadmap-Fortschritt und spannenden Ankündigungen! Melde dich jetzt mit deiner E-Mail-Adresse an und bleibe über unseren Blog auf dem Laufenden.</div>
       <form onSubmit={subscribe}>
-        <div class="items-center mx-auto mb-3 space-y-4 max-w-screen-sm sm:flex sm:space-y-0">
+        <div className="items-center mx-auto mb-3 space-y-4 max-w-screen-sm sm:flex sm:space-y-0">
           <div className="relative w-full">
             <input
-            class="block p-3 pl-10 w-full text-s text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:rounded-none sm:rounded-l-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+            className="block p-3 pl-10 w-full text-s text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:rounded-none sm:rounded-l-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
               required
               id="email-input"
               name="email"
@@ -53,7 +53,7 @@ export default function SubscribePage() {
             </button>
           </div>
         {state === 'Error' && (
-          <div className="error-state">{errorMsg}</div>
+          <div className="error-state">Du bist bereits dabei!</div>
         )}
         {state === 'Success' && (
           <div className='text-lg font-bold text-black'>Grossartig, du bist jetzt dabei!</div>

@@ -25,12 +25,12 @@ export default function Login() {
     </div>
     </div>
     <div className="flex flex-1 flex-col p-12 lg:col-span-6">
-    <header className="flex items-center justify-between">
-      <h1 className="w-52 cursor-pointer text-2xl font-extralight sm:w-80">Die{" "}<Link href="/">
-        <span className="font-extrabold underline decoration-green-800/90">Web3Navigator</span></Link><br /> Login Page
-      </h1>
-      <ConnectWallet btnTitle="Login" className="!rounded-full !bg-green-800/90 !py-2 !px-1 !text-sm !font-bold !text-white !lg:px-5 !lg:py-3 !lg:text-base"/>
-      </header>
+    <header className="flex flex-col items-center justify-center sm:flex-row sm:items-center sm:justify-between">
+  <h1 className="w-52 cursor-pointer text-2xl font-extralight sm:w-80">Die{" "}<Link href="/">
+    <span className="font-extrabold underline decoration-green-800/90">Web3Navigator</span></Link><br /> Login Page
+  </h1>
+  <ConnectWallet btnTitle="Login" className="!rounded-full !bg-green-800/90 !py-2 !mt-4 !px-1 !text-sm !font-bold !text-white !lg:px-5 !lg:py-3 !lg:text-base"/>
+</header>
       <hr className="my-2 border" />
       {address && (<p className="text-center text-lg text-green-800/90">Du bist connected mit dem Wallet {address.substring(0, 5)}...{address.substring(address.length - 5)}</p>)}
       <div className="mt-28 flex flex-1 flex-col items-center space-y-6 text-center lg:space-y-0 lg:justify-start">
