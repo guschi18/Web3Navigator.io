@@ -27,7 +27,7 @@ function BlogList({posts}: Props) {
                     <p className="font-bold text-lg">{post.title}</p>
                     <p className="text-s">
                         {new Date(post._createdAt).toLocaleDateString
-                        ("de", {
+                        ("en", {
                         day: "numeric",
                         month: "long",
                         year: "numeric",
@@ -36,7 +36,7 @@ function BlogList({posts}: Props) {
                   </div>
                   <div className="flex flex-col lg:flex-row gap-y-2 md:gap-x-2 items-center">
                     {post.categories.map(category =>(
-                      <div className=" bg-blue-600 text-center text-black px-3 py-1 rounded-full text-sm font-semibold" key={post._id}>
+                      <div className=" bg-white text-center text-black px-3 py-1 rounded-full text-sm font-semibold" key={post._id}>
                         <p>{category.title}</p>
                       </div>
                     ))}
@@ -48,7 +48,7 @@ function BlogList({posts}: Props) {
             <p className="underline text-lg font-bold">{post.title}</p>
             <p className="line-clamp-2 text-gray-500 ">{post.description}</p>
               </div >
-              <p className="mt-5 font-bold flex items-center group-hover:underline">Post lesen
+              <p className="mt-5 font-bold flex items-center group-hover:underline">Read Post
                 <ArrowUpRightIcon className="ml-2 h-4 w-4"/>
           </p>
             </div>

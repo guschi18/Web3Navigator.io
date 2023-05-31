@@ -1,6 +1,5 @@
 import { createClient, configureChains, WagmiConfig } from "wagmi";
 import { publicProvider } from "wagmi/providers/public";
-import { SessionProvider } from "next-auth/react";
 import { mainnet } from "wagmi/chains";
 import '../styles/globals.css'
 import { ThirdwebProvider } from "@thirdweb-dev/react";
@@ -10,6 +9,7 @@ const { provider, webSocketProvider } = configureChains(
   [mainnet],
   [publicProvider()]
 );
+
 
 const activeChain = "mumbai";
 
@@ -27,7 +27,7 @@ function MyApp({ Component, pageProps }) {
       domain: domainName,
       // The URL of your Auth API
       authUrl: "/api/auth",
-      loginRedirect: '/mitgliederbereich',
+      loginRedirect: '/exclusive-content',
     }}>
     <Component {...pageProps} />
     </ThirdwebProvider>

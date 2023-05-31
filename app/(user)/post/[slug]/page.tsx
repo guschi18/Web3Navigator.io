@@ -55,13 +55,13 @@ return (
                     alt={post.author.name}
                     fill/>
                 </div>
-                <section className="p-5 bg-orange-400 w-full">
+                <section className="p-5 bg-gradient-to-br from-black to-amber-900 w-full">
                     <div className="flex flex-col md:flex-row justify-between gap-y-5">
                         <div>
                             <h1 className="text-4xl font-extrabold">{post.title}</h1>
 
                                 <p>
-                                {new Date(post._createdAt).toLocaleDateString("de", {
+                                {new Date(post._createdAt).toLocaleDateString("en", {
                                     day: "numeric",
                                     month: "long",
                                     year: "numeric",

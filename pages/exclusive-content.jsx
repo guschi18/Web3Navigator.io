@@ -8,9 +8,11 @@ import LoginBanner from "../components/LoginBanner"
 import LoginFooter from "../components/LoginFooter"
 import LoginHeader from '@/components/LoginHeader';
 import { groq } from "next-sanity";
-import { client } from "../lib/sanity.client"
-import BlogList2 from "../components/BlogList2"
-import Subscribe from "../components/Subscribe"
+import { client } from "../lib/sanity.client";
+import BlogList2 from "../components/BlogList2";
+import Subscribe from "../components/Subscribe";
+import Head from 'next/head';
+
 
 
 
@@ -27,6 +29,10 @@ function User({ posts }) {
 
   return (
     <div className="max-w-7xl mx-auto">
+      <Head>
+        <title>Shita-Kiri-Suzume Blog</title>
+        <meta name="description" content="Shita-Kiri-Suzume Blog" />
+      </Head>
      <LoginHeader />
       <LoginBanner />
       <BlogList2 posts={posts} />
@@ -77,7 +83,7 @@ export async function getServerSideProps(context) {
 
   // Finally, return the props
   const query = groq`
-  *[_type == "post" && references(categories._ref, "fcce9b19-fa3e-449e-b176-8ddf00cc803f")] {
+  *[_type == "post" && references(categories._ref, "c6fb47ba-735f-4bd2-9ba0-bf4309037d2a", "690f205a-be57-4488-b8fd-f11452dbab33")] {
     ...,
     author->,
     categories[]->,

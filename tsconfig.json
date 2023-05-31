@@ -23,6 +23,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "pages/nft/web3navigator.jsx", "pages/nftlogin/nftlogin.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "pages/nft/shitakirisuzume.jsx", "pages/nftlogin/nftlogin.tsx"],
   "exclude": ["node_modules"]
 }
